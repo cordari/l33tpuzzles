@@ -44,6 +44,15 @@ class TreeNode:
         self.left = left
         self.right = right
 class Solution:
+    """
+    to be symmetric, the root node either has no children, or must have both children.
+
+    then recursively, pass down the left and right child as two separate nodes, and check
+    1. left node val == right node val OR both left node and right node are null
+    2. left node's left is symmetric with right node's right
+    3. left node's right is symmetric with right node's left
+    
+    """
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         return self.is_symm(root.left, root.right)
 
